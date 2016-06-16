@@ -1,0 +1,23 @@
+{
+  "name": "rtsp-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zappen999/rtsp-server.git"
+  },
+  "author": "Johan Kanefur <johan.canefur@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zappen999/rtsp-server/issues"
+  },
+  "homepage": "https://github.com/zappen999/rtsp-server#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3"
+  }
+}

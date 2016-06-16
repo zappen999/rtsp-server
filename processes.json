@@ -1,0 +1,16 @@
+{
+  "apps" : [
+    {
+      "name": "Camera 1"
+      "script": "index.js",
+      "watch": false,
+      "env": {
+        "NODE_ENV": "development",
+        "CAM_IP": "",
+        "CAM_URI": "",
+        "CAM_USER": "",
+        "CAM_PASS": ""
+      },
+    }
+  ]
+}
