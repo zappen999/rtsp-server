@@ -1,16 +1,27 @@
 {
   "apps" : [
     {
-      "name": "Camera 1"
+      "name": "Hessdalen",
       "script": "index.js",
       "watch": false,
       "env": {
         "NODE_ENV": "development",
-        "CAM_IP": "",
-        "CAM_URI": "",
-        "CAM_USER": "",
-        "CAM_PASS": ""
-      },
+        "CAM_NAME": "Hessdalen",
+        "CAM_ID": "hessdalen-1",
+        "CAM_URI": "rtsp://@freja.hiof.no:1935/rtplive/_definst_/hessdalen03.stream",
+        "DST_EXT": "mp4",
+        "SPLIT": 60
+      }
+    },
+    {
+      "name": "Dirmaid",
+      "script": "cleaner.js",
+      "watch": false,
+      "env": {
+        "NODE_ENV": "development",
+        "INTERVAL": "60s",
+        "AGE": "1w"
+      }
     }
   ]
 }

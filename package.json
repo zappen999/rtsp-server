@@ -19,5 +19,9 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^2.5.3"
+  },
+  "dependencies": {
+    "dirmaid": "^0.1.0",
+    "fluent-ffmpeg": "^2.1.0"
   }
 }

@@ -5,22 +5,20 @@ const Camera = require('../lib/camera');
 
 describe('Camera', () => {
   describe('Constructor', () => {
-    it('should set ip, uri, user, pass', () => {
-      const cam = new Camera('ip', 'uri', 'user', 'pass');
-      expect(cam._ip).to.equal('ip');
+    it('should set name, id, uri', () => {
+      const cam = new Camera('name', 'asd', 'uri');
+      expect(cam._name).to.equal('name');
+      expect(cam._id).to.equal('asd');
       expect(cam._uri).to.equal('uri');
-      expect(cam._username).to.equal('user');
-      expect(cam._password).to.equal('pass');
     });
   });
 
   describe('Getters', () => {
-    it('should get ip, uri, user, pass', () => {
-      const cam = new Camera('ip', 'uri', 'user', 'pass');
-      expect(cam.ip).to.equal('ip');
+    it('should get name, id, uri', () => {
+      const cam = new Camera('name', 'asd', 'uri');
+      expect(cam.name).to.equal('name');
+      expect(cam.id).to.equal('asd');
       expect(cam.uri).to.equal('uri');
-      expect(cam.username).to.equal('user');
-      expect(cam.password).to.equal('pass');
     });
   });
 });
