@@ -15,6 +15,27 @@ describe('Recorder', () => {
       expect(rec._cam).to.equal('camera');
       expect(rec._options).to.deep.equal(opts);
     });
+
+    it('should set storage dir default', () => {
+      const opts = {
+        outStream: () => {},
+        ext: 'mp4',
+        file: 'test'
+      };
+      const rec = new Recorder('camera', opts);
+      expect(rec._options.storage).to.equal('./');
+    });
+
+    it('should set storage directory', () => {
+      const opts = {
+        outStream: () => {},
+        ext: 'mp4',
+        file: 'test',
+        storage: '/somepath'
+      };
+      const rec = new Recorder('camera', opts);
+      expect(rec._options.storage).to.equal('/somepath');
+    });
   });
 
   describe('Event setup', () => {

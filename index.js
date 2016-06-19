@@ -1,5 +1,12 @@
 const Camera = require('./lib/camera');
 const Recorder = require('./lib/recorder');
+const Alarm = require('./lib/alarm');
+
+const alarm = new Alarm('10s');
+
+alarm.onTrigger(() => {
+  console.log('Alarma!');
+});
 
 const cam = new Camera(
   process.env.CAM_NAME,
@@ -10,7 +17,8 @@ const cam = new Camera(
 const rec = new Recorder(cam, {
   outStream: () => {},
   ext: process.env.DST_EXT,
-  split: process.env.SPLIT
+  split: process.env.SPLIT,
+  storage: process.env.STORAGE
 });
 
 rec.on('start', (cmd) => {
@@ -27,12 +35,9 @@ rec.on('stderr', errLine => {
 
 // TODO: Alarm if no progress in some minutes??
 rec.on('progress', info => {
-  //console.log('Progress', info);
+  alarm.snooze();
+  console.log('Snoozin');
 });
 
 rec.setup();
 rec.start();
-
-
-
-console.log('Has started process');
