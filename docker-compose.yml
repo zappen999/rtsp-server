@@ -1,0 +1,10 @@
+app:
+  build: .
+  environment:
+    STORAGE: '/surveillance/storage'
+    ALARM_EMAIL: 'johan.canefur@gmail.com'
+    SYSTEM_EMAIL: 'surveillance@solidio.se'
+    SENDGRID_APIKEY: ''
+  volumes:
+    - ./logs:/surveillance/app/logs
+    - ./storage:/surveillance/storage

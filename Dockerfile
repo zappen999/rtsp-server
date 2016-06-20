@@ -25,7 +25,7 @@ RUN \
 # Install Node process manager
 RUN npm install -g pm2
 
-RUN mkdir storage app
-ADD . app
+RUN mkdir -p /surveillance/storage /surveillance/app
+ADD . /surveillance/app
 
-CMD ["./app/entrypoint.sh"]
+ENTRYPOINT ["bash", "/surveillance/app/entrypoint.sh"]

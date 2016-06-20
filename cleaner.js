@@ -2,6 +2,7 @@
  * Process that cleans old recordings
  */
 const Dirmaid = require('dirmaid');
+const path = require('path');
 
 // Logging
 const winston = require('winston');
@@ -12,7 +13,7 @@ dirmaidLog.info(
   'Starting dirmaid with 60s interval, removing files older than 1w'
 );
 
-const maid = new Dirmaid('data/recordings/*.mp4', {
+const maid = new Dirmaid(path.join(process.env.STORAGE, '*.mp4')), {
   interval: '60s',
   age: '1w',
 });

@@ -2,7 +2,7 @@
   "apps" : [
     {
       "name": "Hessdalen",
-      "script": "index.js",
+      "script": "/surveillance/app/index.js",
       "watch": false,
       "env": {
         "NODE_ENV": "development",
@@ -21,7 +21,6 @@
         "NODE_ENV": "development",
         "INTERVAL": "60s",
         "AGE": "1w",
-        "DIR": "../storage"
       }
     }
   ]

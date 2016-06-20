@@ -43,9 +43,8 @@ alarm.on('trigger', () => {
   const email = new sendgrid.Email();
   email.addTo(process.env.ALARM_EMAIL);
   email.setFrom(process.env.SYSTEM_EMAIL);
-  email.setSubject(`Problem med kamera ${cam.id}`);
-  email.setHtml(`Har inte fått någon respons med ${cam.id} de senaste 15` +
-    `sekunderna`);
+  email.setSubject(`Problems with camera '${cam.id}'`);
+  email.setHtml(`No response from camera '${cam.id}' the last 15 seconds.`);
 
   emailLog.info(`Sending trigger email to ${process.env.ALARM_EMAIL}`);
   sendgrid.send(email, (err, res) => {
@@ -65,8 +64,8 @@ alarm.on('resolve', () => {
   const email = new sendgrid.Email();
   email.addTo(process.env.ALARM_EMAIL);
   email.setFrom(process.env.SYSTEM_EMAIL);
-  email.setSubject(`Problem löst med ${cam.id}`);
-  email.setHtml(`Problemet med ${cam.id} har löst sig själv`);
+  email.setSubject(`Problem solved with cam ${cam.id}`);
+  email.setHtml(`The issue with camera '${cam.id}' has been resolved.`);
   emailLog.info(`Sending resolve email to ${process.env.ALARM_EMAIL}`);
   sendgrid.send(email, (err, res) => {
     if (err) {
