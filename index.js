@@ -4,7 +4,7 @@ const Alarm = require('./lib/alarm');
 
 const alarm = new Alarm('10s');
 
-alarm.onTrigger(() => {
+alarm.on('trigger', () => {
   console.log('Alarma!');
 });
 
