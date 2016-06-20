@@ -22,6 +22,8 @@
   },
   "dependencies": {
     "dirmaid": "^0.1.0",
-    "fluent-ffmpeg": "^2.1.0"
+    "fluent-ffmpeg": "^2.1.0",
+    "sendgrid": "2.0.0",
+    "winston": "^2.2.0"
   }
 }

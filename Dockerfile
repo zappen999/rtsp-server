@@ -3,8 +3,8 @@ FROM ubuntu:14.04
 RUN apt-get update
 RUN apt-get install software-properties-common -y
 RUN add-apt-repository ppa:mc3man/trusty-media -y
-RUN apt-get update
-RUN apt-get dist-upgrade
+RUN apt-get update -y
+RUN apt-get dist-upgrade -y
 RUN apt-get install ffmpeg -y
 
 # Install curl, git, wget and Node.js

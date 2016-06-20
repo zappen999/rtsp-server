@@ -10,8 +10,7 @@
         "CAM_ID": "hessdalen-1",
         "CAM_URI": "rtsp://@freja.hiof.no:1935/rtplive/_definst_/hessdalen03.stream",
         "DST_EXT": "mp4",
-        "SPLIT": 60,
-        "STORAGE": "../storage"
+        "SPLIT": 60
       }
     },
     {
